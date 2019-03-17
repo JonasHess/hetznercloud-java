@@ -6,6 +6,8 @@ import lombok.Data;
 import me.tomsdevsn.hetznercloud.deserialize.DateDeserializer;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Data
 public class Server {
@@ -34,6 +36,7 @@ public class Server {
     @JsonProperty("included_traffic")
     private Long includedTraffic;
     private Protect protection;
+    private Map<String, String> labels = new HashMap<>();
 
     @Data
     public static class Protect {
